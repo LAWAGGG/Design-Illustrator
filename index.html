@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Illustrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="app">
+        <section id="init" class="init hide">
+            <div class="text-logo" id="textLogo">
+                <h1 class="title-1">Design</h1>
+                <h1 class="title-2">Illustrator</h1>
+            </div>
+        </section>
+        <section id="screen" class="screen fadeIn">
+            <section class="left">
+                <div>
+                    <h3>Design Illustrator</h3>
+                </div>
+                <div class="flex-col justify-between h-full">
+                    <div class="tools grid">
+                        <button class="btnTool" value="Brush">Brush</button>
+                        <button class="btnTool" value="Bucket">Bucket</button>
+                        <button class="btnTool" value="Eraser">Eraser</button>
+                        <button class="btnTool" value="Text">Text</button>
+                        <button class="btnTool" value="Move">Move</button>
+                        <button class="btnTool" value="Stamp">Stamp</button>
+                        <button class="btnTool" value="Picker">Picker</button>
+                        <button class="btnTool" value="Shape">Shape</button>
+                    </div>
+                    <div class="features">
+                        <button class="btnFeature" disabled>Paste</button>
+                        <div class="grid">
+                            <button class="btnFeature" value="Undo">Undo (5)</button>
+                            <button class="btnFeature" value="Redo">Redo (0)</button>
+                            <button class="btnFeature" value="ZoomOut">Zoom (-)</button>
+                            <button class="btnFeature" value="ZoomIn">Zoom (+)</button>
+                            <button class="btnFeature" value="Import">Import <input type="file" id="inputFile"></button>
+                            <button class="btnFeature" value="Export">Export</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="right">
+                <nav class="top">
+                    <div class="settings hide" id="Brush">
+                        <div class="shape justify-center items-center gap-05">
+                            <span>Shape: </span>
+                            <button class="btnShape" value="circle"><span
+                                    style="color: white; font-size: 24px;">&#9679;</span></button>
+                            <button class="btnShape" value="rect"><span style="color: white;">&#9646;</span></button>
+                        </div>
+
+                        <div class="justify-center items-center gap-05">
+                            <span>Size: </span>
+                            <input id="inputBrushSize" type="range" value="1" min="1" max="100">
+                            <div id="sizeValue">20px</div>
+                        </div>
+
+                        <div class="opacity justify-center items-center gap-05">
+                            <span>Opacity: </span>
+                            <button class="btnOpacity" value="1">100</button>
+                            <button class="btnOpacity" value="0.5">50</button>
+                            <button class="btnOpacity" value="0">0</button>
+                        </div>
+                    </div>
+                    <div class="settings hide" id="Move">
+                        <div class="justify-center items-center gap-05">
+                            <span>rotate :</span>
+                            <input type="range" id="inputRotate" min="0" max="360">
+                        </div>
+                        <div class="justify-center items-center gap-05">
+                            <span>counter clockwise: </span>
+                            <input type="checkbox" id="inputClockwise">
+                        </div>
+
+                        <div class="justify-center items-center gap-05">
+                            <span>flip: </span>
+                            <button class="btnFlip" value="Horizontal">Horizontal</button>
+                            <button class="btnFlip" value="Vertical">Vertical</button>
+                        </div>
+                    </div>
+                    <div class="settings hide" id="Shape">
+                        <div class="shape justify-center items-center gap-05">
+                            <span>shape: </span>
+                            <button class="btnCreateShape" value="circle"><span
+                                    style="color: white; font-size: 24px;">&#9679;</span></button>
+                            <button class="btnCreateShape" value="square"><span
+                                    style="color: white;">&#9632;</span></button>
+                            <button class="btnCreateShape" value="rect"><span
+                                    style="color: white;">&#9646;</span></button>
+                            <button class="btnCreateShape" value="line"><span
+                                    style="color: white;">&#9472;</span></button>
+                        </div>
+                    </div>
+                    <div class="settings hide" id="Text">
+                        <div class="justify-center items-center gap-05">
+                            <span>typeface: </span>
+                            <select id="selectFont">
+                                <option value="">-- Select Font --</option>
+                                <option value="cursive">cursive</option>
+                                <option value="fantasy">fantasy</option>
+                                <option value="monospace">monospace</option>
+                                <option value="sans-serif">sans-serif</option>
+                                <option value="serif">serif</option>
+                            </select>
+                        </div>
+
+                        <div class="justify-center items-center gap-05">
+                            <span>size: </span>
+                            <input type="range" id="inputFontSize" min="8" max="200">
+                        </div>
+
+                        <div class="justify-center items-center gap-05">
+                            <span>style: </span>
+                            <button class="btnStyle" value="Bold">Bold</button>
+                            <button class="btnStyle" value="Italic">Italic</button>
+                            <button class="btnStyle" value="Underline">Underline</button>
+                        </div>
+                    </div>
+                </nav>
+                <main class="bottom">
+                    <section class="main-board">
+                        <svg id="board"></svg>
+
+                        <div class="detail">
+                            <p id="inputSizes">
+                                size: <input type="number" id="inputWidth" value="1024" placeholder="width"> x
+                                <input type="number" id="inputHeight" value="600" placeholder="height">
+                            </p>
+                            <p>zoom: <span id="zoomSize">0%</span></p>
+                        </div>
+                    </section>
+                    <section class="rightMain">
+                        <div class="colour-section">
+                            <div>
+                                <p>Colour: </p>
+                                <div id="colorValue"></div>
+                            </div>
+
+                            <div class="colors-rgb" id="inputColours">
+                                <div class="justify-center gap-05">
+                                    <span>Red</span>
+                                    <input type="range" min="0" max="255" id="inputRed">
+                                </div>
+                                <div class="justify-center gap-05">
+                                    <span>Green</span>
+                                    <input type="range" min="0" max="255" id="inputGreen">
+                                </div>
+                                <div class="justify-center gap-05">
+                                    <span>Blue</span>
+                                    <input type="range" min="0" max="255" id="inputBlue">
+                                </div>
+                            </div>
+
+                            <div class="filters">
+                                <div class="grid">
+                                    <button class="btnFilter" value="Brightness">Brightness</button>
+                                    <button class="btnFilter" value="Saturation">Saturation</button>
+                                    <button class="btnFilter" value="Grayscale">Grayscale</button>
+                                    <button class="btnFilter" value="Opacity">Opacity</button>
+                                </div>
+                                <div>
+                                    <span>Intensity: </span><input type="range" min="0" step="0.1" id="inputIntensity"
+                                        max="1">
+                                </div>
+                                <button id="btnDuplicate">Duplicate</button>
+                                <button id="btnAddLayer">+ Layer</button>
+                            </div>
+                        </div>
+                        <div class="layers-section" id="layerLists">
+                            <!-- the layers added in here -->
+                        </div>
+                    </section>
+                </main>
+            </section>
+        </section>
+    </main>
+
+    <form class="modal gap-05 hide" id="textForm">
+        <input type="text" id="inputLayerName" placeholder="Content">
+        <button>Add</button>
+    </form>
+    <script src="main.js"></script>
+</body>
+
+</html>

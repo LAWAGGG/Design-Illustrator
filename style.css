@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(24, 29, 35);
+    overflow: hidden;
+}
+
+.hide {
+    display: none !important;
+}
+
+.init,
+.screen {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(24, 29, 35);
+    color: white;
+}
+
+.modal {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 42%;
+}
+
+.btnFeature[value="Import"] {
+    position: relative;
+    overflow: hidden;
+}
+
+#inputFile {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 160%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.init {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-logo {
+    position: relative;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 100%;
+    transition: all .3s;
+}
+
+.text-logo h1 {
+    display: flex;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-decoration: underline;
+    padding: 0.2rem;
+    border-radius: .4rem;
+}
+
+.title-2 {
+    display: flex;
+    position: absolute;
+    top: 52%;
+    left: 53%;
+    background-color: rgb(43, 50, 21);
+}
+
+.title-1 {
+    font-family: cursive;
+    display: flex;
+    position: absolute;
+    background-color: rgb(50, 21, 21);
+    top: 44%;
+    left: 45%;
+    z-index: 1;
+}
+
+.fadeOut {
+    animation: fadeOut 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 200px;
+    background-color: rgb(44, 57, 73);
+    padding: 1rem;
+    position: relative;
+}
+
+.left button {
+    padding: 0.5rem 0.3rem;
+}
+
+button {
+    padding: 0.5rem 0.3rem;
+    background-color: rgb(80, 103, 132);
+    color: white;
+    border: none;
+    border-radius: .5rem;
+}
+
+/* button:hover {
+    background-color: rgb(85, 110, 141);
+} */
+
+button:disabled {
+    background-color: rgb(58, 75, 96);
+    color: rgb(114, 146, 184);
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5rem;
+}
+
+.screen {
+    display: flex;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.top {
+    width: 100%;
+    background-color: rgb(56, 72, 91);
+    padding: 1rem;
+    min-height: 60px;
+}
+
+.settings {
+    display: flex;
+    gap: 2rem;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.items-center {
+    display: flex;
+    align-items: center;
+}
+
+.shape button,
+.opacity button {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7rem;
+    text-align: center;
+}
+
+.active {
+    background-color: rgb(104, 139, 182);
+}
+
+#inputRed[type="range"] {
+    accent-color: red;
+}
+
+#inputGreen[type="range"] {
+    accent-color: rgb(0, 244, 0);
+}
+
+#inputBlue[type="range"] {
+    accent-color: rgb(0, 174, 255);
+}
+
+.gap-05 {
+    gap: 0.5rem;
+}
+
+.bottom {
+    display: flex;
+    height: 100%;
+}
+
+text {
+    user-select: none;
+}
+
+.main-board {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+#board {
+    width: 1024px;
+    height: 600px;
+    transition: transform .3s ease-in-out;
+}
+
+.detail {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: white;
+    color: black;
+    gap: 2rem;
+    border-top: 1px solid black;
+}
+
+.rightMain {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 300px;
+    background-color: rgb(44, 57, 73);
+    padding: 1rem;
+}
+
+.colour-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+
+.layers-section {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(62, 79, 101);
+    overflow-y: scroll;
+    max-height: 300px;
+}
+
+.layer {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    align-items: center;
+}
+
+.btnHide {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.items-end {
+    display: flex;
+    justify-content: end;
+}
+
+#colorValue {
+    width: 100%;
+    height: 50px;
+    border-radius: .5rem;
+    background-color: white;
+}
+
+
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
